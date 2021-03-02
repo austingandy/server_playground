@@ -51,13 +51,18 @@ def write_failed_message_response(sock, message)
     sock.print(message)
 end
 
+def parse_form_input(request)
+	return nil if !request.include?('?')
+	params = {}
+	request.split('?').last.split(' ').first.split('&').each{|input|
+		k, v = input.split('=')
+		params[URI.unescape(k)] = URI.unescape(v)
+	}
+	params
+end
+
 while session = server.accept
 	request = session.readpartial(2048)
-	# params = {}
-	# request.split('?').last.split(' ').first.split('&').each{|input|
-	# 	k, v = input.split('=')
-	# 	params[URI.unescape(k)] = URI.unescape(v)
-	# }
 	STDERR.puts request
 
 	path = requested_file(request)
