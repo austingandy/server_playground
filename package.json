@@ -1,0 +1,25 @@
+{
+  "name": "donate_when",
+  "version": "1.0.0",
+  "description": "I intend on this eventually being a website that's like IFTTT for donations. For now, I'm treating it as a fun learning opportunity to build a webapp from the ground up starting with a web server.",
+  "main": "http_server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node http_server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austingandy/donate_when.git"
+  },
+  "author": "Austin Gandy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/austingandy/donate_when/issues"
+  },
+  "homepage": "https://github.com/austingandy/donate_when#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0"
+  }
+}
